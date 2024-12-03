@@ -57,5 +57,20 @@ export default {
         refresh: true,
         breadcrumb: ['qreports.folders']
       }
-  }
+    },
+    reportType: {
+      permission: 'ireport.report-types.manage',
+      activated: true,
+      authenticated: true,
+      path: '/report-type',
+      name: 'qreports.admin.reportType',
+      crud: import('modules/qreports/_crud/reportType'),
+      page: () => import('modules/qcrud/_pages/admin/crudPage'),
+      layout: () => import('src/layouts/master.vue'),
+      title: 'Report Type',
+      icon: 'fa-light fa-file-chart-column',
+      subHeader: {
+        refresh: true,
+      }
+    },
 }

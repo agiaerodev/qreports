@@ -6,7 +6,8 @@ export default [
     icon: 'fal fa-file-alt',
     children: [
       pages.qreports.folders,
-      pages.qreports.reportCreate
+      pages.qreports.reportCreate,
+      pages.qreports.reportType,
     ]
   },
 ]

@@ -3,7 +3,11 @@ export default {
     "cms": {
       "form": {},
       "label": {
-        "selectAll": "Select all"
+        "selectAll": "Select all",
+        "procedureName": "Procedure Name",
+        "columns": "Columns",
+        "filters": "Filters",
+        "sort": "Sort",
       },
       "sidebar": {
         "reportsInfo": "Reports",
