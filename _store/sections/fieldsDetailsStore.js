@@ -171,14 +171,26 @@ export default function fieldsDetailsStore() {
                 }
             }
             if (crud && item.id === 'date') {
-                data[item.id] = {
+                if(item.type !== 'dateRange') {
+                  data[item.id] = {
+                      props: {
+                          label: item.props.label
+                      },
+                      name: item.name,
+                      field: item.field,
+                      type: valueItem || null,
+                      value: valueItem || null
+                  }
+                } else {
+                  data[item.id] = {
                     props: {
-                        label: item.props.label
+                      label: item.props.label,
+                      field: item.field,
                     },
-                    name: item.name,
-                    field: item.field,
-                    type: valueItem || null,
+                    quickFilter: item.quickFilter || false,
+                    type: item.type,
                     value: valueItem || null
+                  }
                 }
             } else {
                 const valueItem  = item.id === 'date' ? item.value && item.value.type ? item.value.type : null : state.form[item.id] || item.value || null
