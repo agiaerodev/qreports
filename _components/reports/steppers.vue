@@ -170,7 +170,6 @@ export default {
             if (success) {
               if (this.step === STEP_FEATURE) {
                 if (
-                  featureStore().getSelectedFilters().length === 0 ||
                   featureStore().getSelectedColumns().length === 0
                 ) {
                   form.error = true;
