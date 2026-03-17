@@ -39,6 +39,9 @@ export default {
     crudInfo() {
       return this.$store.state.qcrudComponent.component[this.crudId] || {};
     },
+    module() {
+      return this.$helper.getInfoFromPermission(this.$route.meta.permission)?.module || '';
+    },
     crudData() {
       return {
         read: {
@@ -54,6 +57,7 @@ export default {
             order: { ...this.sort },
           },
         },
+        configNameCustom: `${this.module}.config.quickCards.report-${this.reportId}`,
       };
     },
   },
